@@ -6,14 +6,15 @@ public class Room {
     
     private int id;
     private String name, description;
-    private ArrayList connectedRooms = new ArrayList();
+    private ArrayList directions = new ArrayList();
 
-    public Room(int id, String name, String description) {
+    public Room(int id, String name, String description, ArrayList directions) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.directions = directions;
     }
-
+    
     public int getId() {
         return id;
     }
@@ -26,8 +27,8 @@ public class Room {
         return description;
     }
 
-    public ArrayList getConnectedRooms() {
-        return connectedRooms;
+    public ArrayList getDirections() {
+        return directions;
     }
 
     public void setId(int id) {
@@ -42,10 +43,8 @@ public class Room {
         this.description = description;
     }
 
-    public void setConnectedRooms(ArrayList connectedRooms) {
-        this.connectedRooms = connectedRooms;
+    public void setDirections(ArrayList directions) {
+        this.directions = directions;
     }
-    
-    
     
 }
