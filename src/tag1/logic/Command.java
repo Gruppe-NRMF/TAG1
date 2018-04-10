@@ -56,8 +56,8 @@ public class Command {
         }
     }
 
-    public String gameInformation() {
-        return "The game is a test";
+    public void gameInformation() {
+        System.out.println("The game is a test");
     }
 
     public void gameCommands() {
@@ -79,6 +79,10 @@ public class Command {
             case "2":
                 gameCommands();
         }
+    }
+    
+    public void separator(){
+        System.out.println("****************************");
     }
 
 }

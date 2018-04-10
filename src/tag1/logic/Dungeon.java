@@ -50,7 +50,7 @@ public class Dungeon {
     }
     
     public void createRoomsMessage(){
-        System.out.print("Rooms is now created in the dungeons");
+        System.out.println("Rooms is now created in the dungeons");
     }
     
     public void showRoomInformation(){

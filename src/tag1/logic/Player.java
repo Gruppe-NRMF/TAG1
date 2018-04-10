@@ -8,6 +8,7 @@ public class Player {
     private String name;
     private int health = 100;
     
+    Scanner scan = new Scanner(System.in);
     
     public String getName() {
         return name;
@@ -33,9 +34,12 @@ public class Player {
     public void createPlayer() {
         
         System.out.println("Please enter your playername: ");
-        Scanner scan = new Scanner(System.in);
         this.name = scan.next();
         
+    }
+    
+    public void showPlayer(){
+        System.out.println("Lets begin the game " + name+ "!");
     }
     
 }
