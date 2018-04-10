@@ -5,10 +5,19 @@ import java.util.Arrays;
 
 public class Dungeon {
 
+    private int activeRoom;
     private ArrayList<Room> rooms = new ArrayList();
+
+    public int getActiveRoom() {
+        return activeRoom;
+    }
 
     public ArrayList<Room> getRooms() {
         return rooms;
+    }
+
+    public void setActiveRoom(int activeRoom) {
+        this.activeRoom = activeRoom;
     }
 
     public void setRooms(ArrayList<Room> rooms) {
@@ -38,13 +47,13 @@ public class Dungeon {
         rooms.add(new Room(19, "name19", "description19", new ArrayList(Arrays.asList(null, null, 20, null))));
         rooms.add(new Room(20, "name20", "description20", new ArrayList(Arrays.asList(null, 15, null, 19))));
         rooms.add(new Room(21, "name21", "description21", new ArrayList(Arrays.asList(null, 16, null, null))));
-        
-        createRoomsMessage();
     }
     
     public void createRoomsMessage(){
         System.out.print("Rooms is now created in the dungeons");
     }
     
-  
+    public void showRoomInformation(){
+        System.out.println(rooms.get(activeRoom - 1).toString());
+    }
 }

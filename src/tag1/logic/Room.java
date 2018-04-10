@@ -46,5 +46,9 @@ public class Room {
     public void setDirections(ArrayList directions) {
         this.directions = directions;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Room Name: " + name + "\nRoom Description: " + description;
+    }
 }
