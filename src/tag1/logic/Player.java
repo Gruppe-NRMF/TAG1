@@ -28,14 +28,12 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Player{" + "name=" + name + ", health=" + health + '}';
+        return "Player Name=: " + name + "\nHealth: " + health;
     }
     
     public void createPlayer() {
-        
         System.out.println("Please enter your playername: ");
-        this.name = scan.next();
-        
+        name = scan.next();
     }
     
     public void showPlayer(){

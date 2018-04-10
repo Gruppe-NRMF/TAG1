@@ -24,8 +24,7 @@ public class Game {
         command.separator();
         command.gameInformation();
         command.separator();
-        System.out.println("Type start when you're ready to start the game! ");
-        command.start(scan.next());
+        command.checkStart("Type start when you're ready to start the game! ");
         command.separator();
         dungeon.createRooms();
         dungeon.createRoomsMessage();

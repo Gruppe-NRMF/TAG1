@@ -47,15 +47,6 @@ public class Command {
         }
     }
 
-    public void start(String input) {
-        if (input.equals(start)) {
-            System.out.println("Starting game!");
-        }
-        else {
-            System.out.println("Invalid input. You can type 'help' for instructions");
-        }
-    }
-
     public void gameInformation() {
         System.out.println("The game is a test");
     }
@@ -68,7 +59,7 @@ public class Command {
     }
 
     public void help(String input) {
-        if (input == help) {
+        if (input.equals(help)) {
             System.out.println("Select one of the options below: ");
         }
         System.out.println("1: for game information ");
@@ -83,6 +74,40 @@ public class Command {
     
     public void separator(){
         System.out.println("****************************");
+    }
+    
+    public void checkStart(String input) {
+        boolean check = true;
+        
+        while(check){
+            System.out.println(input);
+        
+            if (scan.next().equals(start)) {
+                separator();
+                System.out.println("Starting game!");
+                check = false;
+            }
+            else {
+                System.out.println("Invalid input. You can type 'help' for instructions");
+            }
+        }
+    }
+    
+    public void checkCommand(String input, String command) {
+        boolean check = true;
+        
+        while(check){
+            System.out.println(input);
+        
+            if (scan.next().equals(start)) {
+                separator();
+                System.out.println("Starting game!");
+                check = false;
+            }
+            else {
+                System.out.println("Invalid input. You can type 'help' for instructions");
+            }
+        }
     }
 
 }
