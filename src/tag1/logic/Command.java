@@ -13,6 +13,7 @@ public class Command {
     private String west = "west";
     private String quit = "quit";
     private String help = "help";
+    private String start = "start";
     private ArrayList allowedCommands = new ArrayList();
     private boolean quitGame = false;
 
@@ -35,27 +36,38 @@ public class Command {
         allowedCommands.add(west);
         allowedCommands.add(quit);
         allowedCommands.add(help);
+        allowedCommands.add(start);
     }
-        public void quitGame(String input) {
-        if (input == quit) {
+
+    public void quitGame(String input) {
+        if (input.equals(quit)) {
             setQuitGameBoolean(true);
             System.out.println("Quitting game in 10 seconds..");
             System.exit(10);
         }
     }
 
-    public String gameInformation() {
-            return "The game is a test";
+    public void start(String input) {
+        if (input.equals(start)) {
+            System.out.println("Starting game!");
+        }
+        else {
+            System.out.println("Invalid input. You can type 'help' for instructions");
+        }
     }
-    
+
+    public String gameInformation() {
+        return "The game is a test";
+    }
+
     public void gameCommands() {
         for (Object allowedCommand : allowedCommands) {
             System.out.println(allowedCommand);
 
         }
     }
-    
-        public void help(String input) {
+
+    public void help(String input) {
         if (input == help) {
             System.out.println("Select one of the options below: ");
         }
