@@ -18,13 +18,15 @@ public class Game {
     }
     
     public void start(){
+        command.addCommands();
         player.createPlayer();
         command.separator();
         player.showPlayer();
         command.separator();
         command.gameInformation();
         command.separator();
-        command.checkStart("Type start when you're ready to start the game! ");
+        command.checkCommandAllowed("Type 'start' when you're ready to start the game2! ");
+        command.checkStart("Type 'start' when you're ready to start the game! ");
         command.separator();
         dungeon.createRooms();
         dungeon.createRoomsMessage();
