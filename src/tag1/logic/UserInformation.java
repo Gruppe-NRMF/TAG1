@@ -53,5 +53,15 @@ public class UserInformation {
             ex.printStackTrace();
         }
     }
+    
+    public void win(Dungeon dun) {
+        
+        if(dun.getActiveRoom() == 21) {
+            System.out.println("Congratz, you reched the end of the dungeon! ");
+            System.exit(0);
+            
+        }
+        
+    }
 
 }
