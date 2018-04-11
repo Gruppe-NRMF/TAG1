@@ -1,6 +1,5 @@
 package tag1.logic;
 
-import tag1.data.UserInformation;
 import java.util.Scanner;
 
 import tag1.data.Player;
@@ -23,7 +22,6 @@ public class Game {
         userinfo.separator();
         userinfo.gameInformation();
         userinfo.separator();
-        //command.checkCommandAllowed("Type 'start' when you're ready to start the game2! ");
         command.checkStart("Type 'start' when you're ready to start the game! ");
         userinfo.separator();
         dungeon.createRooms();
@@ -33,8 +31,13 @@ public class Game {
         dungeon.showRoomInformation();
     //  -------------------------------------------------------------------------------------
         while(!userinfo.isWin()) {
-            command.checkCommandAllowed("Type direction in order to move in the dungeon: ");
-            dungeon.navigate(command.getActiveInput());
+            dungeon.setWrongDirection(true);
+            userinfo.separator();
+            while(dungeon.isWrongDirection()){
+                command.checkCommandAllowed("Type direction in order to move in the dungeon: ");
+                dungeon.navigate(command.getActiveInput());
+            }
+            userinfo.separator();
             dungeon.showRoomInformation();
             if(dungeon.getActiveRoom() == 21){
                 userinfo.win(dungeon);

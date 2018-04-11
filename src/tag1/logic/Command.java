@@ -71,23 +71,25 @@ public class Command {
     public void checkCommandAllowed(String input) {
         boolean check = true;
         
+        String input_check = "";
+        
         while(check){
             System.out.println(input);
             
-            String input_check = scan.next();
+            input_check = scan.next();
             
             for (int i = 0; i < allowedCommands.size(); i++) {
                 String str = allowedCommands.get(i);
                 if (input_check.equals(str)) check = false; 
             }
             
-            if (!check) checkCommandQuit(input_check);
-            if (!check) checkCommandHelp(input_check);
+            if (!check && input_check.equals(quit)) checkCommandQuit(input_check);
+            if (!check && input_check.equals(help)) checkCommandHelp(input_check);
 
             if (check) System.out.println("Invalid input. You can type 'help' for instructions!");
         }
         
-        activeInput = input;
+        activeInput = input_check;
     }
     
     public void checkCommandQuit(String input){

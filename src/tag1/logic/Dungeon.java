@@ -12,13 +12,23 @@ public class Dungeon {
     private final int SOUTH = 1;
     private final int EAST = 2;
     private final int WEST = 3;
+    
+    private boolean wrongDirection;
 
+    public boolean isWrongDirection() {
+        return wrongDirection;
+    }
+    
     public int getActiveRoom() {
         return activeRoom;
     }
 
     public ArrayList<Room> getRooms() {
         return rooms;
+    }
+
+    public void setWrongDirection(boolean wrongDirection) {
+        this.wrongDirection = wrongDirection;
     }
 
     public void setActiveRoom(int activeRoom) {
@@ -68,30 +78,46 @@ public class Dungeon {
 
         switch (input) {
             case "north":
-                direction = 0;
+                direction = NORTH;
                 if(checkNull(direction) == true) {
-                    activeRoom = (int) rooms.get(activeRoom -1).getDirections().get(direction);
+                    activeRoom = (int) rooms.get(activeRoom - 1).getDirections().get(direction);
+                    wrongDirection = false;
+                }
+                else{
+                    wrongDirection = true;
                 }
                 break;
             case "south":
-                direction = 1;
+                direction = SOUTH;
                 checkNull(direction);
                 if(checkNull(direction) == true) {
-                    activeRoom = (int) rooms.get(activeRoom -1).getDirections().get(direction);
+                    activeRoom = (int) rooms.get(activeRoom - 1).getDirections().get(direction);
+                    wrongDirection = false;
+                }
+                else{
+                    wrongDirection = true;
                 }
                 break;
             case "east":
-                direction = 2;
+                direction = EAST;
                 checkNull(direction);
                 if(checkNull(direction) == true) {
-                    activeRoom = (int) rooms.get(activeRoom -1).getDirections().get(direction);
+                    activeRoom = (int) rooms.get(activeRoom - 1).getDirections().get(direction);
+                    wrongDirection = false;
+                }
+                else{
+                    wrongDirection = true;
                 }
                 break;
             case "west":
-                direction = 3;
+                direction = WEST;
                 checkNull(direction);
                 if(checkNull(direction) == true) {
-                    activeRoom = (int) rooms.get(activeRoom -1).getDirections().get(direction);
+                    activeRoom = (int) rooms.get(activeRoom - 1).getDirections().get(direction);
+                    wrongDirection = false;
+                }
+                else{
+                    wrongDirection = true;
                 }
                 break;
         }
