@@ -60,8 +60,7 @@ public class UserInformation {
             System.out.println("Congratz, you reched the end of the dungeon! ");
             System.exit(0);
             
-        }
-        
+        }    
     }
 
 }
