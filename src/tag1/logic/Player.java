@@ -32,21 +32,18 @@ public class Player {
     }
     
     public void createPlayer() {
-        //System.out.println("Please enter your playername: ");
-        //name = scan.next();
+        System.out.println("Please enter your playername: ");
         
-        boolean check = true;
+        String input = "";
+        input = scan.nextLine();
         
-        while(check){
+        while(input.isEmpty()){
+            System.out.println("Invalid input. Must not be empty!");
             System.out.println("Please enter your playername: ");
-        
-            if (scan.nextLine() == null) {
-                check = false;
-            }
-            else {
-                System.out.println("Invalid input. Must not be empty!");
-            }
+            input = scan.nextLine();
         }
+        
+        name = input;
     }
     
     public void showPlayer(){
