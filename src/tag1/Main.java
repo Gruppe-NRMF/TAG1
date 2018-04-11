@@ -1,6 +1,6 @@
 package tag1;
 
-import tag1.tui.Game;
+import tag1.logic.Game;
 
 public class Main {
 

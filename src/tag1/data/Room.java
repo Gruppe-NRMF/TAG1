@@ -1,4 +1,4 @@
-package tag1.logic;
+package tag1.data;
 
 import java.util.ArrayList;
 
@@ -43,7 +43,7 @@ public class Room {
         this.description = description;
     }
 
-    public void setDirections(ArrayList directions) {
+    public void setDirections(ArrayList<Integer> directions) {
         this.directions = directions;
     }
 

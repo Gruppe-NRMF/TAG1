@@ -1,5 +1,5 @@
 
-package tag1.logic;
+package tag1.data;
 
 import java.util.Scanner;
 

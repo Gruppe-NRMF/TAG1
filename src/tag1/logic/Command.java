@@ -1,5 +1,6 @@
 package tag1.logic;
 
+import tag1.data.UserInformation;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,6 +8,8 @@ public class Command {
     
     UserInformation userinfo = new UserInformation();
     Scanner scan = new Scanner(System.in);
+    
+    private String activeInput;
 
     private final String north = "north";
     private final String south = "south";
@@ -18,8 +21,16 @@ public class Command {
     private ArrayList<String> allowedCommands = new ArrayList();
     private boolean quitGame = false;
 
+    public String getActiveInput() {
+        return activeInput;
+    }
+
     public ArrayList<String> getAllowedCommands() {
         return allowedCommands;
+    }
+
+    public void setActiveInput(String activeInput) {
+        this.activeInput = activeInput;
     }
 
     public void setAllowedCommands(ArrayList<String> allowedCommands) {
@@ -75,6 +86,8 @@ public class Command {
 
             if (check) System.out.println("Invalid input. You can type 'help' for instructions!");
         }
+        
+        activeInput = input;
     }
     
     public void checkCommandQuit(String input){
@@ -97,32 +110,4 @@ public class Command {
         }
     }
     
-//    public void gameInformation() {
-//        System.out.println("The game is a test!");
-//        userinfo.pressAnyKeyToContinue();
-//    }
-
-//    public void gameCommands() {        
-//        for (int i = 0; i < allowedCommands.size(); i++) {
-//            switch(i){
-//                case 0: System.out.println("Tryk " + "'" + allowedCommands.get(i) + "'" + " for at navigere rundt!"); break;
-//                case 1: System.out.println("Tryk " + "'" + allowedCommands.get(i) + "'" + " for at navigere rundt!"); break;
-//                case 2: System.out.println("Tryk " + "'" + allowedCommands.get(i) + "'" + " for at navigere rundt!"); break;
-//                case 3: System.out.println("Tryk " + "'" + allowedCommands.get(i) + "'" + " for at navigere rundt!"); break;
-//                case 4: System.out.println("Tryk " + "'" + allowedCommands.get(i) + "'" + " for at stoppe spillet!"); break;
-//                case 5: System.out.println("Tryk " + "'" + allowedCommands.get(i) + "'" + " for at få hjælp!"); break;
-//                case 6: System.out.println("Tryk " + "'" + allowedCommands.get(i) + "'" + " for at starte spillet!"); break;
-//            }   
-//        }
-//        pressAnyKeyToContinue();
-//    }
-//    
-//    public void pressAnyKeyToContinue() { 
-//        System.out.println("Press Enter key to continue...");
-//        try {
-//            System.in.read();
-//        } catch (IOException ex) {
-//            ex.printStackTrace();
-//        }
-//    }
 }

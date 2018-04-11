@@ -1,10 +1,10 @@
-package tag1.tui;
+package tag1.logic;
 
+import tag1.data.UserInformation;
 import java.util.Scanner;
-import tag1.logic.Command;
-import tag1.logic.Dungeon;
-import tag1.logic.Player;
-import tag1.logic.UserInformation;
+
+import tag1.data.Player;
+import tag1.data.UserInformation;
 
 public class Game {
 
@@ -16,10 +16,6 @@ public class Game {
     UserInformation userinfo = new UserInformation();
     
     public void play() {
-        start();
-    }
-    
-    public void start(){
         command.addCommands();
         player.createPlayer();
         userinfo.separator();
@@ -35,7 +31,15 @@ public class Game {
         userinfo.separator();
         dungeon.setActiveRoom(1);
         dungeon.showRoomInformation();
-        
+    //  -------------------------------------------------------------------------------------
+        while(!userinfo.isWin()) {
+            command.checkCommandAllowed("Type direction in order to move in the dungeon: ");
+            dungeon.navigate(command.getActiveInput());
+            dungeon.showRoomInformation();
+            if(dungeon.getActiveRoom() == 21){
+                userinfo.win(dungeon);
+            }
+        }
     }
 
 }

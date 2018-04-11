@@ -1,5 +1,6 @@
 package tag1.logic;
 
+import tag1.data.Room;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -27,19 +28,19 @@ public class Dungeon {
     public void setRooms(ArrayList<Room> rooms) {
         this.rooms = rooms;
     }
-    
-    public void createRooms(){
+
+    public void createRooms() {
         //ArrayList for Room - North, South, East, West
-        rooms.add(new Room(1, "name1", "description1", new ArrayList(Arrays.asList(5, null, 2, null)))); 
-        rooms.add(new Room(2, "name2", "description2", new ArrayList(Arrays.asList(6, null, null, 1)))); 
-        rooms.add(new Room(3, "name3", "description3", new ArrayList(Arrays.asList(null, null, 4, null)))); 
-        rooms.add(new Room(4, "name4", "description4", new ArrayList(Arrays.asList(9, null, null, 3)))); 
-        rooms.add(new Room(5, "name5", "description5", new ArrayList(Arrays.asList(10, 1, 6, null)))); 
-        rooms.add(new Room(6, "name6", "description6", new ArrayList(Arrays.asList(null, 2, null, 5)))); 
-        rooms.add(new Room(7, "name7", "description7", new ArrayList(Arrays.asList(12, null, null, null)))); 
-        rooms.add(new Room(8, "name8", "description8", new ArrayList(Arrays.asList(13, null, null, null)))); 
-        rooms.add(new Room(9, "name9", "description9", new ArrayList(Arrays.asList(null, 4, 10, null)))); 
-        rooms.add(new Room(10, "name10", "description10", new ArrayList(Arrays.asList(15, 5, 11, 9)))); 
+        rooms.add(new Room(1, "name1", "description1", new ArrayList(Arrays.asList(5, null, 2, null))));
+        rooms.add(new Room(2, "name2", "description2", new ArrayList(Arrays.asList(6, null, null, 1))));
+        rooms.add(new Room(3, "name3", "description3", new ArrayList(Arrays.asList(null, null, 4, null))));
+        rooms.add(new Room(4, "name4", "description4", new ArrayList(Arrays.asList(9, null, null, 3))));
+        rooms.add(new Room(5, "name5", "description5", new ArrayList(Arrays.asList(10, 1, 6, null))));
+        rooms.add(new Room(6, "name6", "description6", new ArrayList(Arrays.asList(null, 2, null, 5))));
+        rooms.add(new Room(7, "name7", "description7", new ArrayList(Arrays.asList(12, null, null, null))));
+        rooms.add(new Room(8, "name8", "description8", new ArrayList(Arrays.asList(13, null, null, null))));
+        rooms.add(new Room(9, "name9", "description9", new ArrayList(Arrays.asList(null, 4, 10, null))));
+        rooms.add(new Room(10, "name10", "description10", new ArrayList(Arrays.asList(15, 5, 11, 9))));
         rooms.add(new Room(11, "name11", "description11", new ArrayList(Arrays.asList(null, null, 12, 10))));
         rooms.add(new Room(12, "name12", "description12", new ArrayList(Arrays.asList(17, 7, 13, 11))));
         rooms.add(new Room(13, "name13", "description13", new ArrayList(Arrays.asList(null, 8, null, 12))));
@@ -52,33 +53,55 @@ public class Dungeon {
         rooms.add(new Room(20, "name20", "description20", new ArrayList(Arrays.asList(null, 15, null, 19))));
         rooms.add(new Room(21, "name21", "description21", new ArrayList(Arrays.asList(null, 16, null, null))));
     }
-    
-    public void createRoomsMessage(){
+
+    public void createRoomsMessage() {
         System.out.println("Rooms is now created in the dungeons");
     }
-    
-    public void showRoomInformation(){
+
+    public void showRoomInformation() {
         System.out.println(rooms.get(activeRoom - 1).toString());
     }
-    
+
     public void navigate(String input) {
-        
-        int direction;
-        
-        switch(input) {
-            case "north": getActiveRoom() ; break;
-            case "south": ; break;
-            case "east": ; break;
-            case "west": ; break;
+
+        int direction = 0;
+
+        switch (input) {
+            case "north":
+                direction = 0;
+                if(checkNull(direction) == true) {
+                    activeRoom = (int) rooms.get(activeRoom -1).getDirections().get(direction);
+                }
+                break;
+            case "south":
+                direction = 1;
+                checkNull(direction);
+                if(checkNull(direction) == true) {
+                    activeRoom = (int) rooms.get(activeRoom -1).getDirections().get(direction);
+                }
+                break;
+            case "east":
+                direction = 2;
+                checkNull(direction);
+                if(checkNull(direction) == true) {
+                    activeRoom = (int) rooms.get(activeRoom -1).getDirections().get(direction);
+                }
+                break;
+            case "west":
+                direction = 3;
+                checkNull(direction);
+                if(checkNull(direction) == true) {
+                    activeRoom = (int) rooms.get(activeRoom -1).getDirections().get(direction);
+                }
+                break;
         }
-        
     }
-    
-    public Room lookupRoom(int id, Room room) {
-        
-        
-        rooms.get(getActiveRoom());
-        setActiveRoom(room.getDirections().get);
+
+    public boolean checkNull(int input) {
+        if (rooms.get(activeRoom - 1).getDirections().get(input) == null) {
+            return false;
+        }
+        return true;
     }
 
 }

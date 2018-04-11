@@ -1,9 +1,14 @@
-package tag1.logic;
+package tag1.data;
 
 import java.io.IOException;
+import tag1.logic.Command;
+import tag1.logic.Dungeon;
 
 public class UserInformation {
 
+    
+    boolean win = false;
+    
     public void gameInformation() {
         System.out.println("THE DUNGEON GAME...\nIn order to win the game, you must navigate through the dungeon and reach the final boss at room (21).\nYou will need to use the console while playing.\nThe directions you can move ingame is North, South, East and West.\nYou start at 100 health.\nWrite 'help' for further instructions.\nGood luck fellow!");
         pressAnyKeyToContinue();
@@ -58,9 +63,18 @@ public class UserInformation {
         
         if(dun.getActiveRoom() == 21) {
             System.out.println("Congratz, you reched the end of the dungeon! ");
+            win = true;
             System.exit(0);
             
         }    
     }
 
+    public boolean isWin() {
+        return win;
+    }
+
+    public void setWin(boolean win) {
+        this.win = win;
+    }
+    
 }
