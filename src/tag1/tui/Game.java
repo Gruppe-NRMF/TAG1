@@ -27,7 +27,7 @@ public class Game {
         userinfo.separator();
         userinfo.gameInformation();
         userinfo.separator();
-        command.checkCommandAllowed("Type 'start' when you're ready to start the game2! ");
+        //command.checkCommandAllowed("Type 'start' when you're ready to start the game2! ");
         command.checkStart("Type 'start' when you're ready to start the game! ");
         userinfo.separator();
         dungeon.createRooms();

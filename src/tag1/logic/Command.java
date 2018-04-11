@@ -48,7 +48,7 @@ public class Command {
         
             if (scan.next().equals(start)) {
                 userinfo.separator();
-                System.out.println("Starting game!");
+                System.out.println("Starting game...!");
                 check = false;
             }
             else {

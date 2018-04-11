@@ -4,10 +4,8 @@ import java.io.IOException;
 
 public class UserInformation {
 
-    
-
     public void gameInformation() {
-        System.out.println("THE DUNGEON GAME... In order to win the game, you must navigate through the dungeon and reach the final boss at room (21). You will need to use the console while playing. The directions you can move ingame is North, South, East and West. You start at 100 health. Write 'help' for further instructions. Good luck fellow!");
+        System.out.println("THE DUNGEON GAME...\nIn order to win the game, you must navigate through the dungeon and reach the final boss at room (21).\nYou will need to use the console while playing.\nThe directions you can move ingame is North, South, East and West.\nYou start at 100 health.\nWrite 'help' for further instructions.\nGood luck fellow!");
         pressAnyKeyToContinue();
     }
 
@@ -48,7 +46,7 @@ public class UserInformation {
     }
 
     public void pressAnyKeyToContinue() {
-        System.out.println("Press Enter key to continue...");
+        System.out.println("Press 'space' key to continue...");
         try {
             System.in.read();
         } catch (IOException ex) {
