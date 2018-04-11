@@ -6,7 +6,7 @@ public class Room {
     
     private int id;
     private String name, description;
-    private ArrayList directions = new ArrayList();
+    private ArrayList<Integer> directions = new ArrayList();
 
     public Room(int id, String name, String description, ArrayList directions) {
         this.id = id;

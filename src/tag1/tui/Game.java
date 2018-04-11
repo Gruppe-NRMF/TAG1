@@ -35,6 +35,7 @@ public class Game {
         userinfo.separator();
         dungeon.setActiveRoom(1);
         dungeon.showRoomInformation();
+        
     }
 
 }

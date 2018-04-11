@@ -7,6 +7,10 @@ public class Dungeon {
 
     private int activeRoom;
     private ArrayList<Room> rooms = new ArrayList();
+    private final int NORTH = 0;
+    private final int SOUTH = 1;
+    private final int EAST = 2;
+    private final int WEST = 3;
 
     public int getActiveRoom() {
         return activeRoom;
@@ -56,4 +60,25 @@ public class Dungeon {
     public void showRoomInformation(){
         System.out.println(rooms.get(activeRoom - 1).toString());
     }
+    
+    public void navigate(String input) {
+        
+        int direction;
+        
+        switch(input) {
+            case "north": getActiveRoom() ; break;
+            case "south": ; break;
+            case "east": ; break;
+            case "west": ; break;
+        }
+        
+    }
+    
+    public Room lookupRoom(int id, Room room) {
+        
+        
+        rooms.get(getActiveRoom());
+        setActiveRoom(room.getDirections().get);
+    }
+
 }
