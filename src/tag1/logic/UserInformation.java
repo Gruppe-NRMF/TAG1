@@ -46,7 +46,7 @@ public class UserInformation {
     }
 
     public void pressAnyKeyToContinue() {
-        System.out.println("Press 'space' key to continue...");
+        System.out.println("Press 'Enter' key to continue...");
         try {
             System.in.read();
         } catch (IOException ex) {
